@@ -26,7 +26,7 @@ interface UserTypeMenu {
 const menuItems: Record<string, UserTypeMenu> = {
   admin: {
     items: [
-      { name: "Dashboard", path: "/", icon: <MdOutlineDashboard /> },
+      { name: "Dashboard", path: "/dashboard", icon: <MdOutlineDashboard /> },
       { name: "Help & Support", path: "/support", icon: <MdSupportAgent /> },
     ],
     common: [
@@ -40,7 +40,7 @@ const menuItems: Record<string, UserTypeMenu> = {
   },
   user: {
     items: [
-      { name: "Home", path: "/", icon: <MdOutlineDashboard /> },
+      { name: "Home", path: "/dashboard", icon: <MdOutlineDashboard /> },
       { name: "Help & Support", path: "/support", icon: <MdSupportAgent /> },
     ],
     common: [
@@ -59,7 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({ userType }) => {
 
   const handleSignOut = () => {
     localStorage.clear();
-    history("/signin");
+    history("/");
   };
 
   const handleItemClick = (path?: string) => {
