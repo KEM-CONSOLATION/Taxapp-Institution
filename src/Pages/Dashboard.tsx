@@ -35,8 +35,20 @@ const Dashboard = () => {
           <div className=" grid gap-[16px] lg:flex items-center justify-between ">
             <p className=" font-[600] text-[#012320] text-[20px]">Overview</p>
 
-            <p className=" text-[#797889] font-[500] text-[14px]">
+            <p className=" text-[#797889] font-[500] text-[14px] flex items-center gap-[16px]">
               Year in view:
+              <SelectInput
+                name="role"
+                label="Role"
+                value={role}
+                onChange={handleSelectChange}
+                options={[
+                  { value: "2024", label: "2024" },
+                  { value: "2025", label: "2025" },
+                  { value: "2026", label: "2026" },
+                ]}
+                placeholder="Select your role"
+              />
             </p>
           </div>
           <div className=" grid gap-[16px] md:grid-cols-2 items-center place-items-center lg:grid-cols-4 mt-[34px]">

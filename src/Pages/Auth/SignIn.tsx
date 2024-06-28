@@ -4,13 +4,16 @@ import AuthLayout from "../../Layout/AuthLayout";
 import { MdOutlineLock } from "react-icons/md";
 import Checkbox from "../../Component/Checkbox";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const methods = useForm();
   const { watch, handleSubmit, register, setValue } = methods;
 
   const onSubmit = (data: any) => {
     console.log(data);
+    navigate("/dashboard");
   };
 
   const [isChecked, setIsChecked] = useState(false);
