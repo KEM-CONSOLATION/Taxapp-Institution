@@ -17,7 +17,14 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <Sidebar userType={userType} />
       <div className="flex-1 flex flex-col overflow-hidden relative">
         <Header />
-        <main className="flex-1 overflow-y-auto p-4 bg-[#FFFFFF] rounded-[15px] relative">
+        <main
+          className="flex-1 overflow-y-auto p-4 bg-[#FFFFFF] rounded-[15px] relative"
+          style={{
+            overflowY: "scroll",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
           <div className="bg-white">{children}</div>
         </main>
       </div>
